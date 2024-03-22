@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h2>Signup</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ serializer.errors }}
+        </div>
+        <div>
+            <label for="id_username">Username:</label>
+            <input type="username" name="username" id="id_username">
+            {{ serializer.errors.username }}
+        </div>
+        <div>
+            <label for="id_email">Email:</label>
+            <input type="email" name="email" id="id_email">
+            {{ serializer.errors.email }}
+        </div>
+        <div>
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" id="id_password">
+            {{ serializer.errors.password }}
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

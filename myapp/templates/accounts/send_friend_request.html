@@ -1,0 +1,19 @@
+<!-- send_friend_request.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Friend Request</title>
+</head>
+<body>
+    <h1>Send Friend Request</h1>
+    <form action="{% url 'send_friend_request' %}" method="POST">
+        {% csrf_token %}
+        <label for="to_user">Send Friend Request To:</label>
+        <input type="number" name="to_user" placeholder="Enter User ID">
+        <button type="submit">Send Request</button>
+    </form>
+</body>
+</html>
